@@ -6,19 +6,14 @@ const upload = multer({ dest: 'uploads/' })
 
 const PostCrtl=require('../controllers/Create')
 
-
-
-
-
-
-
 // post routes
 
 router.post("/createpost",upload.single('image'),PostCrtl.CreatePost)
 router.get("/getpost",PostCrtl.GetAllPost)
+router.get("/getpostbyID/:id",PostCrtl.GetSinglePostByID)
+router.put("/updatepost/:id",upload.single('image'),PostCrtl.UpdataPost)
 router.delete("/deletepost/:id",PostCrtl.DeletePost)
-router.put("/updatepost/:id",PostCrtl.UpdataPost)
 
 
 
-module.exports=router
+module.exports = router;

@@ -5,17 +5,13 @@ const path = require("path");
 
 const mongoose = require("mongoose")
 
-const PostRoutes = require("./routes/Routes")
-
-
-
 
 // middel weare 
 app.use(express.json())
 app.use(cors());
 app.use(express.static(path.join(__dirname, "uploads")));
 
-
+const PostRoutes = require("./routes/Routes")
 
 app.get('/',(req,res)=>{
 
@@ -30,7 +26,7 @@ app.use("/api", PostRoutes)
 
 mongoose.connect('mongodb://127.0.0.1:27017/testing')
   .then(() =>{
-    app.listen("4002"),()=>{
-        console.log("Server is working")
-    }
+    app.listen("4002", () =>{
+        console.log("Server is working on port 4002")
+    })
   })

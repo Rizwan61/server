@@ -26,7 +26,7 @@ app.use("/api", PostRoutes)
 
 mongoose.connect('mongodb://127.0.0.1:27017/testing')
   .then(() =>{
-    app.listen("4002", () =>{
-        console.log("Server is working on port 4002")
+    app.listen("5000", () =>{
+        console.log("Server is working on port 5000")
     })
   })
